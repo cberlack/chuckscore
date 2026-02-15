@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏔️ ChuckScore Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏔️ ChuckScore Tracker</h1>
+            <p class="tagline">Your Personal Experience Rating System</p>
+        </header>
+
+        <div class="input-section">
+            <h2>Log New Experience</h2>
+            <form id="scoreForm">
+                <div class="form-group">
+                    <label for="experienceName">Experience Name:</label>
+                    <input type="text" id="experienceName" required placeholder="e.g., Grand Hotel, NBA Finals, LAX Airport">
+                </div>
+
+                <div class="form-group">
+                    <label for="experienceType">Category:</label>
+                    <select id="experienceType" required>
+                        <option value="">Select a category...</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Sporting Event">Sporting Event</option>
+                        <option value="Airport">Airport</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="College">College</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" placeholder="City, State/Country">
+                </div>
+
+                <div class="form-group">
+                    <label for="customDate">Date & Time:</label>
+                    <input type="datetime-local" id="customDate" required>
+                </div>
+
+                <div class="rating-categories" id="ratingCategories">
+                    <h3>Rate the Following (1-5 ⭐)</h3>
+                    <!-- Categories will be dynamically added based on experience type -->
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes (Optional):</label>
+                    <textarea id="notes" rows="3" placeholder="Additional thoughts..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">🏔️ Log ChuckScore</button>
+            </form>
+        </div>
+
+        <div class="scores-section">
+            <div class="scores-header">
+                <h2>My ChuckScores</h2>
+                <div class="filter-section">
+                    <select id="filterCategory">
+                        <option value="all">All Categories</option>
+                        <option value="Hotel">Hotels</option>
+                        <option value="Sporting Event">Sporting Events</option>
+                        <option value="Airport">Airports</option>
+                        <option value="Restaurant">Restaurants</option>
+                        <option value="College">Colleges</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <select id="sortBy">
+                        <option value="date-desc">Newest First</option>
+                        <option value="date-asc">Oldest First</option>
+                        <option value="score-desc">Highest Score</option>
+                        <option value="score-asc">Lowest Score</option>
+                    </select>
+                </div>
+            </div>
+            <div id="scoresList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
